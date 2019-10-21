@@ -1,0 +1,8 @@
+<div class="toolbar" role="banner">
+  <span (click)="go_to_film_list()">Welcome to {{title}}</span>
+    <div class="spacer"></div>
+  <div class="nav_right">
+    <a class="nav_link" [routerLink]="['/films/favorites']">My Favorites ({{getNumberFavorites()}})</a>
+    <!-- <a class="nav_link">Login</a> -->
+  </div>
+</div>

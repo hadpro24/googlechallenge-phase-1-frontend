@@ -1,0 +1,50 @@
+<div class="contenair">
+   <div *ngIf="isLoading">
+       <p>Loading...</p>
+   </div>
+   <div *ngIf="isLoading==false" class="data-film">
+     <div class="info">
+          <a href="#" [routerLink]="['/films']">Back to list</a>
+          <h1>{{ film?.title }}</h1>
+            <p>
+                {{ film?.description }}
+            </p>
+            <p>
+                <span><strong>Released to : </strong> {{ film?.released }}</span>
+                <span><strong>Runtime : </strong> {{ film?.runtime }}</span>
+                <span><strong>Rated : </strong> {{ film?.rated }}</span>
+            </p>
+            <div>
+                <div class="elements-film" *ngIf="film?.languages.length">
+                  <h3>Languages : </h3>
+                  <span *ngFor="let language of film?.languages;let last = last;">{{ language.name }}
+                    <span *ngIf="!last">, </span>
+                  </span>
+                </div>
+                <div class="elements-film" *ngIf="film?.actors.length">
+                  <h3>Actors : </h3>
+                  <span *ngFor="let actor of film?.actors;let last = last;">{{ actor.name }}
+                    <span *ngIf="!last">, </span> </span>
+                </div>
+                <div class="elements-film" *ngIf="film?.writers.length">
+                  <h3>Writers : </h3>
+                  <span *ngFor="let writer of film?.writers;let last = last;">{{ writer.name }}
+                    <span *ngIf="!last">, </span>
+                  </span>
+                </div>
+                <div class="elements-film" *ngIf="film?.directors.length">
+                  <h3>Actors : </h3>
+                  <span *ngFor="let director of film?.directors;let last = last;">{{ director.name }}
+                    <span *ngIf="!last">, </span>
+                  </span>
+                </div>
+
+            </div>
+     </div>
+     <div class="image">
+        <div class="couverture">
+          <img [src]="get_image_path(film?.image)" [alt]="film?.title" width="450">
+        </div>
+     </div>
+   </div>
+</div>

@@ -1,0 +1,39 @@
+
+<!-- Toolbar -->
+
+<div class="content">
+
+  <!-- Highlight Card -->
+
+  <!-- Resources -->
+  <div class="contenair">
+    <div *ngIf="isLoading">
+      <h1>Loading...</h1>
+    </div>
+    <div *ngIf="!filmsFavorite?.length" id="not-found">
+      <h1>You not have the favorite films yet.</h1>
+    </div>
+    <div class="films-list" *ngIf="isLoading==false">
+        <div *ngFor="let film of filmsFavorite" class="card-film">
+           <div class="image">
+              <img [src]="get_image_path(film.image)" alt="image film">
+           </div>
+           <div class="description">
+             <h3>{{ film.title }}</h3>
+             <h5><strong><em>Year of production : </em></strong>{{ film.released }}</h5>
+             <div class="button-two">
+                <a type="button" class="button-favoir-and-details" [routerLink]="['/films/',film.id]">Details</a>
+                <a type="button" [className]="
+                  isInFavoriteFilms(film.id) ? 'button-favorite-remove': 'button-favoir-and-details'
+                "
+                (click)="isInFavoriteFilms(film.id) ? removeFavorite(film.id): makeFavorite(film.id)">
+                  <span *ngIf="isInFavoriteFilms(film.id)"> <i class="far fa-thumbs-down"></i> Remove favorite</span>
+                  <span *ngIf="isInFavoriteFilms(film.id)==false"><i class="fas fa-thumbs-up"></i> Add to favorite</span>
+                </a>
+             </div>
+           </div>
+        </div>
+    </div>
+
+  </div>
+</div>

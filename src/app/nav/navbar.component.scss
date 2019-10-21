@@ -1,0 +1,30 @@
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  height: 60px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+}
+.nav_link{
+  display: inline-block;
+  margin-right: 30px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+
+}
+.nav_right{
+  margin-right: 30px;
+
+}
+
+.toolbar span:first-child,.toolbar span:last-child {
+  margin: 0 30px;
+  cursor: pointer;
+}

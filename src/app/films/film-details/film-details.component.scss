@@ -1,0 +1,28 @@
+.contenair{
+  width: 85%;
+  margin:0 auto;
+  margin-top: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  font-family: helvetica, tahoma, sans-serif;
+  .data-film{
+    display: flex;
+  }
+
+  .info{
+    p{
+      line-height: 27px;
+      span{
+        display: block;
+      }
+    }
+    h3{
+      display: inline-block;
+    }
+  }
+
+  .couverture{
+    margin-left: 50px;
+  }
+}
