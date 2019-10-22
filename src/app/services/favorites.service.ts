@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 
 @Injectable()
 export class FavoritesService{
-    allFavoriteFilmsIds:string[]
+    allFavoriteFilmsIds:string[] = []
 
     getFavorites(){
       return JSON.parse(sessionStorage.getItem('filmsFavorite'))
@@ -23,6 +23,7 @@ export class FavoritesService{
           this.allFavoriteFilmsIds.push(idFilm)
       }
       sessionStorage.setItem('filmsFavorite', JSON.stringify(this.allFavoriteFilmsIds))
+      console.log('ouiiiiii')
     }
 
     removeFavorite(idFilm){
@@ -34,9 +35,8 @@ export class FavoritesService{
     }
 
     inFavoriteFilms(idFilm){
-      let ids = JSON.parse(sessionStorage.getItem('filmsFavorite'))
-      if(ids){
-        return ids.includes(idFilm)
+      if(JSON.parse(sessionStorage.getItem('filmsFavorite'))){
+        return JSON.parse(sessionStorage.getItem('filmsFavorite')).includes(idFilm)
       }
       return false
     }
