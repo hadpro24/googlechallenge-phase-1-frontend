@@ -9,7 +9,10 @@ export class FavoritesService{
     }
 
     getNumberFavorites(){
-      return JSON.parse(sessionStorage.getItem('filmsFavorite')).length
+      if(JSON.parse(sessionStorage.getItem('filmsFavorite'))){
+        return JSON.parse(sessionStorage.getItem('filmsFavorite')).length
+      }
+      return 0
     }
 
     addFavorite(idFilm){
@@ -32,6 +35,9 @@ export class FavoritesService{
 
     inFavoriteFilms(idFilm){
       let ids = JSON.parse(sessionStorage.getItem('filmsFavorite'))
-      return ids.includes(idFilm)
+      if(ids){
+        return ids.includes(idFilm)
+      }
+      return false
     }
 }

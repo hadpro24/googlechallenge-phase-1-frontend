@@ -9,7 +9,6 @@ import { FilmDetailsComponent } from './films/film-details/film-details.componen
 import { FavoritesListComponent } from './favorites/favorites-list.component'
 import { Error404Component } from './404/404.component'
 
-import { FilmsService } from './services/films.service'
 import { UrlService } from './services/urls.service'
 import { FavoritesService } from './services/favorites.service'
 
@@ -31,7 +30,6 @@ import { AppRoutingModule } from './app-routing.module'
     AppRoutingModule,
   ],
   providers: [
-    FilmsService,
     UrlService,
     FavoritesService,
   ],
